@@ -14,7 +14,6 @@
 ;;; Some basic preferences
 
 (setq-default
- blink-cursor-interval 0.4
  bookmark-default-file (locate-user-emacs-file ".bookmarks.el")
  buffers-menu-max-size 30
  case-fold-search t
@@ -59,6 +58,12 @@
     (unless (file-exists-p file)
       (error "File does not exist: %s" file))
     (vlf file)))
+
+
+;; Do not blink cursor
+(setq visible-cursor nil)
+(blink-cursor-mode 0)
+
 
 
 ;;; A simple visible bell which works in all terminal types
