@@ -47,6 +47,19 @@
 (when (maybe-require-package 'marginalia)
   (add-hook 'after-init-hook 'marginalia-mode))
 
+;; When finding a file, backspace should exit the directory
+(defun minibuffer-backward-delete ()
+  "Backward delete but by directories when possible."
+  (interactive)
+  (if (eq ?/ (char-before))
+      (ignore-errors
+        (backward-delete-char 1)
+        (while (not (eq ?/ (char-before)))
+          (backward-delete-char 1)))
+    (backward-delete-char 1)))
+
+(with-eval-after-load 'minibuffer
+  (define-key minibuffer-mode-map [remap delete-backward-char] 'minibuffer-backward-delete))
 
 (provide 'init-minibuffer)
 ;;; init-minibuffer.el ends here
