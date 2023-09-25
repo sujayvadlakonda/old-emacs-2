@@ -64,6 +64,12 @@
 (setq visible-cursor nil)
 (blink-cursor-mode 0)
 
+
+;; Highlight cursor on context switches
+(when (maybe-require-package 'beacon)
+  (setq-default beacon-lighter "")
+  (setq-default beacon-size 20)
+  (add-hook 'after-init-hook 'beacon-mode))
 
 
 ;;; A simple visible bell which works in all terminal types
