@@ -40,6 +40,8 @@
 
 
 (when (maybe-require-package 'dimmer)
+  ;; Do not dim entire frame when out of focus
+  (setq-default dimmer-watch-frame-focus-events nil)
   (setq-default dimmer-fraction 0.15)
   (add-hook 'after-init-hook 'dimmer-mode)
   (with-eval-after-load 'dimmer
