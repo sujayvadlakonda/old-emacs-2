@@ -70,7 +70,8 @@
 (add-hook 'after-init-hook 'beacon-mode)
 
 (require-package 'pulsar)
-(defalias 'beacon-blink 'pulsar-pulse-line)
+(with-eval-after-load 'beacon
+  (defalias 'beacon-blink 'pulsar-pulse-line))
 
 
 ;;; A simple visible bell which works in all terminal types
