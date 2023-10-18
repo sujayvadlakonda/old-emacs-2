@@ -108,6 +108,10 @@ Call a second time to restore the original window configuration."
   (add-hook 'after-init-hook (apply-partially 'windmove-default-keybindings 'control))
   (add-hook 'after-init-hook (apply-partially 'windswap-default-keybindings 'shift 'control)))
 
+(require-package 'golden-ratio)
+(golden-ratio-mode)
+(diminish 'golden-ratio-mode)
+
 
 (provide 'init-windows)
 ;;; init-windows.el ends here
