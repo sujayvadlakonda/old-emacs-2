@@ -305,6 +305,8 @@ ORIG is the advised function, which is called with its ARGS."
 
 (advice-add 'kmacro-call-macro :around 'sanityinc/disable-features-during-macro-call)
 
+;; Prefer C-h for `delete-backward-char' to `help-map'
+(define-key key-translation-map (kbd "C-h") (kbd "DEL"))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
