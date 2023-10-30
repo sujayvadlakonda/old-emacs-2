@@ -110,7 +110,10 @@ typical word processor."
 
 ;;; Capturing
 
-(global-set-key (kbd "C-c c") 'org-capture)
+;; Only capture todo items
+(global-set-key (kbd "C-c c") (lambda ()
+                                (interactive)
+                                (org-capture nil "t")))
 
 (setq org-capture-templates
       `(("t" "todo" entry (file "")  ; "" => `org-default-notes-file'
