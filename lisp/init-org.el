@@ -41,8 +41,7 @@
 
 
 ;; Various preferences
-(setq org-log-done t
-      org-edit-timestamp-down-means-later t
+(setq org-edit-timestamp-down-means-later t
       org-catch-invisible-edits 'show
       org-export-coding-system 'utf-8
       org-fast-tag-selection-single-key 'expert
@@ -164,9 +163,9 @@ typical word processor."
 ;;; To-do settings
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-              (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c/!)")
-              (sequence "WAITING(w/!)" "DELEGATED(e!)" "HOLD(h)" "|" "CANCELLED(c/!)")))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "PROJECT(p)" "|" "DONE(d)" "CANCELLED(c)")
+              (sequence "WAITING(w)" "DELEGATED(e)" "HOLD(h)" "|" "CANCELLED(c)")))
       org-todo-repeat-to-state "NEXT")
 
 (setq org-todo-keyword-faces
