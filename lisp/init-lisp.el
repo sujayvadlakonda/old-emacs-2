@@ -9,9 +9,11 @@
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ELisp")))
 
-(setq-default initial-scratch-message
-              (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))
+(defun kill-scratch-buffer ()
+  (when (get-buffer "*scratch*")
+    (kill-buffer "*scratch*")))
 
+(add-hook 'after-change-major-mode-hook #'kill-scratch-buffer)
 
 (defun sanityinc/headerise-elisp ()
   "Add minimal header and footer to an elisp buffer in order to placate flycheck."
@@ -136,11 +138,6 @@ there is no current file, eval the current buffer."
 ;; Load .el if newer than corresponding .elc
 
 (setq load-prefer-newer t)
-
-
-
-(require-package 'immortal-scratch)
-(add-hook 'after-init-hook 'immortal-scratch-mode)
 
 
 ;;; Support byte-compilation in a sub-process, as
