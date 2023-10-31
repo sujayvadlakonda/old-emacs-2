@@ -75,4 +75,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Keyboard translation
 (setq mac-command-modifier 'meta)
+
+
+;; Global keybindings
+(map! :m (kbd "h") #'evil-snipe-repeat)
+(map! :m (kbd "j") #'evil-backward-char)
+(map! :m (kbd "k") #'evil-next-line)
+(map! :m (kbd "l") #'evil-previous-line)
+(map! :mn (kbd ";") #'evil-forward-char)
