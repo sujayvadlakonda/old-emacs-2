@@ -205,8 +205,7 @@ typical word processor."
            ((org-agenda-overriding-header "Notes")
             (org-tags-match-list-sublevels t)))
           ("g" "GTD"
-           ((agenda "" nil)
-            (tags "INBOX"
+           ((tags "INBOX"
                   ((org-agenda-overriding-header "Inbox")
                    (org-tags-match-list-sublevels nil)))
             (stuck ""
