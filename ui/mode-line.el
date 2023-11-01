@@ -20,3 +20,8 @@
       (cond (OS-MAC 2)
             (OS-WINDOWS 1)
             (0)))
+
+;; Do not dim mode line when frame is out of focus
+(with-eval-after-load 'doom-modeline
+  (remove-function after-focus-change-function
+                   #'doom-modeline-focus-change))
