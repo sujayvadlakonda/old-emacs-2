@@ -25,3 +25,6 @@
 (with-eval-after-load 'doom-modeline
   (remove-function after-focus-change-function
                    #'doom-modeline-focus-change))
+
+;; Using a colon to separate line and column confuzzles with time
+(setq doom-modeline-position-column-line-format '("%l,%c"))
