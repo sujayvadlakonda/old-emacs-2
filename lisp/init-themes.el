@@ -9,8 +9,10 @@
 ;; first-time startup on Emacs > 26.3.
 (setq custom-safe-themes t)
 
+(require-package 'ef-themes)
+
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes '(ef-elea-dark))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -37,6 +39,10 @@
   (interactive)
   (setq custom-enabled-themes '(sanityinc-tomorrow-bright))
   (reapply-themes))
+
+(advice-add 'reapply-themes :after (lambda (&rest _args)
+                                     (set-face-bold 'bold nil)
+                                     (set-face-italic 'italic nil)))
 
 
 (when (maybe-require-package 'dimmer)
