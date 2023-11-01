@@ -28,7 +28,9 @@
 (maybe-require-package 'org-cliplink)
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
-(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c a") (lambda ()
+                                       (interactive)
+                                       (org-agenda nil "g")))
 
 (defvar sanityinc/org-global-prefix-map (make-sparse-keymap)
   "A keymap for handy global access to org helpers, particularly clocking.")
@@ -388,6 +390,11 @@ typical word processor."
       (shell . t)
       (sql . t)
       (sqlite . t)))))
+
+
+;; Set up agenda files
+(setq org-default-notes-file "~/gtd/inbox.org")
+(setq org-agenda-files '("~/gtd/"))
 
 
 (provide 'init-org)
