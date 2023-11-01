@@ -17,6 +17,6 @@
       ;; than the current OSes preference
       doom-modeline-buffer-encoding 'nondefault
       doom-modeline-default-eol-type
-      (cond ((eq system-type 'darwin) 2)
-            ((memq system-type '(cygwin windows-nt ms-dos)) 1)
+      (cond (OS-MAC 2)
+            (OS-WINDOWS 1)
             (0)))

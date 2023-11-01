@@ -18,6 +18,7 @@
 (defun load! (relative-file-path)
   "Load file at RELATIVE-FILE-PATH to `user-emacs-directory'"
   (load (concat user-emacs-directory relative-file-path) nil t))
+(load! "lisp/sugar.el")
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
