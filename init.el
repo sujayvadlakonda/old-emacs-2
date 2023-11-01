@@ -165,8 +165,8 @@
               (server-start))))
 
 ;; Variables configured via the interactive 'customize' interface
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; (when (file-exists-p custom-file)
+;;   (load custom-file))
 
 ;; Locales (setting them earlier in this file doesn't work in X)
 (require 'init-locales)
