@@ -65,13 +65,8 @@
 (blink-cursor-mode 0)
 
 
-;; Highlight line on context switches
-(require-package 'beacon)
-(add-hook 'after-init-hook 'beacon-mode)
-
-(require-package 'pulsar)
-(with-eval-after-load 'beacon
-  (defalias 'beacon-blink 'pulsar-pulse-line))
+;; Highlight the line to immediately find cursor
+(add-hook 'after-init-hook #'global-hl-line-mode)
 
 
 ;;; A simple visible bell which works in all terminal types
