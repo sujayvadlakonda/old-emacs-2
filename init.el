@@ -44,9 +44,6 @@
 (require 'init-exec-path) ;; Set up $PATH
 
 
-;; Allow users to provide an optional "init-preload-local.el"
-(require 'init-preload-local nil t)
-
 ;; Work around an issue in Emacs 29 where this gets implicitly
 ;; reinstalled via the rg -> transient dependency chain, but fails to
 ;; reload cleanly, breaking first-time start-up
@@ -178,9 +175,6 @@
 
 ;; Locales (setting them earlier in this file doesn't work in X)
 (require 'init-locales)
-
-;; Allow users to provide an optional "init-local" containing personal settings
-(require 'init-local nil t)
 
 (provide 'init)
 
