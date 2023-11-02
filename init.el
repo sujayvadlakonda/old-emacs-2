@@ -15,10 +15,7 @@
 (when (version< emacs-version "27.1")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
-(defun load! (relative-file-path)
-  "Load file at RELATIVE-FILE-PATH to `user-emacs-directory'"
-  (load (concat user-emacs-directory relative-file-path) nil t))
-(load! "lisp/sugar.el")
+(load (concat user-emacs-directory "lisp/sugar.el") nil t)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
