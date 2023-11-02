@@ -2,6 +2,7 @@
 
 (require-package 'doom-modeline)
 (add-hook 'after-init-hook #'doom-modeline-mode)
+(add-hook 'after-init-hook #'column-number-mode)
 
 ;; We display project info in the modeline ourselves
 (setq projectile-dynamic-mode-line nil)
