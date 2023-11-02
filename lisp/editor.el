@@ -8,10 +8,3 @@
       (make-directory target-directory t))))
 
 (add-to-list 'find-file-not-found-functions #'create-missing-directories)
-
-;; Permanently kill scratch buffer
-(defun kill-scratch-buffer ()
-  (when (get-buffer "*scratch*")
-    (kill-buffer "*scratch*")))
-
-(add-hook 'after-change-major-mode-hook #'kill-scratch-buffer)
