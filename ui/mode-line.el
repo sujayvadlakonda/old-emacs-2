@@ -17,8 +17,7 @@
       ;; than the current OSes preference
       doom-modeline-buffer-encoding 'nondefault
       doom-modeline-default-eol-type
-      (cond (OS-MAC 2)
-            (OS-WINDOWS 1)
+      (cond (OS-WINDOWS 1)
             (0)))
 
 ;; Do not dim mode line when frame is out of focus
