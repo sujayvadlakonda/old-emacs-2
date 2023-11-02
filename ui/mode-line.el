@@ -27,4 +27,4 @@
                    #'doom-modeline-focus-change))
 
 ;; Using a colon to separate line and column confuzzles with time
-(setq doom-modeline-position-column-line-format '("%l,%c"))
+(setq doom-modeline-position-column-line-format '("(%l,%c)"))
