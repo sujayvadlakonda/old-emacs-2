@@ -180,6 +180,8 @@
 
 (load! "lisp/editor.el")
 
+(unless (fboundp 'restart-emacs)
+  (require-package 'restart-emacs))
 
 ;; Local Variables:
 ;; coding: utf-8
