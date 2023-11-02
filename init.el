@@ -53,7 +53,7 @@
 (require-package 'seq "2.24")
 
 ;; Load configs for specific features and modes
-(require-package 'diminish)
+(defalias 'diminish 'ignore)
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
