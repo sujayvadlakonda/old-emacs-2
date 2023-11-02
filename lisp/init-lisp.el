@@ -6,12 +6,6 @@
 
 (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ELisp")))
 
-(defun kill-scratch-buffer ()
-  (when (get-buffer "*scratch*")
-    (kill-buffer "*scratch*")))
-
-(add-hook 'after-change-major-mode-hook #'kill-scratch-buffer)
-
 
 ;; Make C-x C-e run 'eval-region if the region is active
 
