@@ -129,6 +129,8 @@
 (require 'init-clojure-cider)
 (require 'init-common-lisp)
 
+(load! "lang/emacs-lisp.el")
+
 (when *spell-check-support-enabled*
   (require 'init-spelling))
 
