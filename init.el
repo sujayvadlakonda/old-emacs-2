@@ -72,7 +72,6 @@
 (require 'init-hippie-expand)
 (require 'init-corfu)
 (require 'init-windows)
-;; (require 'init-sessions)
 (require 'init-mmm)
 
 (require 'init-editing-utils)
@@ -118,13 +117,6 @@
 (require 'init-terraform)
 (require 'init-nix)
 (maybe-require-package 'nginx-mode)
-
-;; (require 'init-paredit)
-;; (require 'init-lisp)
-;; (require 'init-slime)
-;; (require 'init-clojure)
-;; (require 'init-clojure-cider)
-;; (require 'init-common-lisp)
 
 (load! "lang/emacs-lisp.el")
 
