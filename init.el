@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
-(setq debug-on-error nil)
+(setq debug-on-error t)
 
 (let ((minver "26.1"))
   (when (version< emacs-version minver)
@@ -56,7 +56,7 @@
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
-(require 'init-themes)
+(load! "ui/theme.el")
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-dired)
