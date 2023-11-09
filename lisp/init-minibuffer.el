@@ -61,5 +61,9 @@
 (with-eval-after-load 'minibuffer
   (define-key minibuffer-mode-map [remap delete-backward-char] 'minibuffer-backward-delete))
 
+
+;; Use `consult-line' for single file search
+(global-set-kbd "C-s" 'consult-line)
+
 (provide 'init-minibuffer)
 ;;; init-minibuffer.el ends here
