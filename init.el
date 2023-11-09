@@ -33,6 +33,12 @@
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 
+;; Process performance tuning
+
+(setq read-process-output-max (* 4 1024 1024))
+(setq process-adaptive-read-buffering nil)
+
+
 ;; Bootstrap config
 
 
@@ -44,10 +50,6 @@
 (require 'init-exec-path) ;; Set up $PATH
 
 
-;; Work around an issue in Emacs 29 where this gets implicitly
-;; reinstalled via the rg -> transient dependency chain, but fails to
-;; reload cleanly, breaking first-time start-up
-(require-package 'seq "2.24")
 
 ;; Load configs for specific features and modes
 (defalias 'diminish 'ignore)
@@ -127,6 +129,7 @@
 
 (require 'init-ledger)
 (require 'init-lua)
+(require 'init-terminals)
 
 ;; Extra packages which don't require any configuration
 
