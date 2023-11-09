@@ -1,16 +1,9 @@
-;;; early-init.el --- Emacs 27+ pre-initialisation config  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
 
-;;; Commentary:
-
-;; Emacs 27+ loads this file before (normally) calling
-;; `package-initialize'.  We use this file to suppress that automatic
-;; behaviour so that startup is consistent across Emacs versions.
-
-;;; Code:
+;; This file loads before UI and package.el
+;; You can *prevent* things from loading,
+;; rather than turn them off after-the-fact.
 
 (setq package-enable-at-startup nil)
 
-;; So we can detect this having been loaded
-(provide 'early-init)
-
-;;; early-init.el ends here
+(load (concat user-emacs-directory "boot.el") nil t)

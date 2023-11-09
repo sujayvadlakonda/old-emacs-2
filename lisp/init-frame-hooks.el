@@ -22,7 +22,8 @@ Selectively runs either `after-make-console-frame-hooks' or
   "The frame (if any) active during Emacs initialization.")
 
 (add-hook 'after-init-hook
-          (lambda () (when sanityinc/initial-frame
+          (lambda () (when (and sanityinc/initial-frame
+                                (frame-live-p sanityinc/initial-frame))
                   (run-after-make-frame-hooks sanityinc/initial-frame))))
 
 
