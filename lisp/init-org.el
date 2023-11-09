@@ -373,6 +373,7 @@ typical word processor."
 (add-to-list 'org-refile-targets '(org-someday-file :maxlevel . 5))
 
 (advice-add 'org-agenda-todo :after 'org-agenda-redo)
+(advice-add 'org-capture-finalize :after 'org-agenda-redo)
 
 
 ;; Do not log after repeat
