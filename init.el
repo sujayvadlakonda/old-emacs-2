@@ -59,6 +59,7 @@
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (load! "ui/theme.el")
+(load! "ui/ui.el")
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-dired)
