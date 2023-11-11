@@ -28,3 +28,7 @@ there is no current file, eval the current buffer."
 
 (with-eval-after-load 'lisp-mode
   (define-key emacs-lisp-mode-map (kbd "C-c C-l") 'sanityinc/load-this-file))
+
+;; Do not check emacs-lisp
+(add-hook 'emacs-lisp-mode-hook (lambda ()
+                                  (flymake-mode -1)))
