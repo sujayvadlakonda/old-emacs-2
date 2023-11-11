@@ -396,5 +396,24 @@ typical word processor."
 ;;           'org-checkbox-statistics-done
 ;;         'org-checkbox-statistics-todo))))
 
+(defun increment-medicine ()
+  "Increment text in the form '[1/2] Medicine_Name 2257'"
+  (interactive)
+  (back-to-indentation)
+  (forward-char 2)
+  (insert " ")
+  (backward-char 2)
+  (org-increase-number-at-point)
+  (delete-char 1)
+  (move-end-of-line 1)
+  (backward-word 1)
+  (backward-char 1)
+  (kill-line)
+  (insert " ")
+  (insert (format-time-string "%H%M" (current-time)))
+  (save-buffer))
+
+(global-set-kbd "C-c m" #'increment-medicine)
+
 (provide 'init-org)
 ;;; init-org.el ends here
