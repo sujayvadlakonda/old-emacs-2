@@ -36,8 +36,6 @@
 (add-hook 'after-init-hook 'global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
-(with-eval-after-load 'autorevert
-  (diminish 'auto-revert-mode))
 
 (add-hook 'after-init-hook 'transient-mark-mode)
 
@@ -86,11 +84,6 @@
 
 
 
-(with-eval-after-load 'subword
-  (diminish 'subword-mode))
-
-
-
 (when (fboundp 'display-line-numbers-mode)
   (setq-default display-line-numbers-width 3)
   (add-hook 'prog-mode-hook 'display-line-numbers-mode))
@@ -112,7 +105,6 @@
   (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
     (add-hook hook 'symbol-overlay-mode))
   (with-eval-after-load 'symbol-overlay
-    (diminish 'symbol-overlay-mode)
     (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
     (define-key symbol-overlay-mode-map (kbd "M-I") 'symbol-overlay-remove-all)
     (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
@@ -186,8 +178,6 @@
 
 (when (maybe-require-package 'page-break-lines)
   (add-hook 'after-init-hook 'global-page-break-lines-mode)
-  (with-eval-after-load 'page-break-lines
-    (diminish 'page-break-lines-mode)))
 
 
 
@@ -223,8 +213,6 @@
 ;;; Cut/copy the current line if no region is active
 (require-package 'whole-line-or-region)
 (add-hook 'after-init-hook 'whole-line-or-region-global-mode)
-(with-eval-after-load 'whole-line-or-region
-  (diminish 'whole-line-or-region-local-mode))
 
 
 
@@ -277,7 +265,6 @@ With arg N, insert N newlines."
                    (lambda (s1 s2) (eq (random 2) 0)))))))
 
 
-
 (require-package 'highlight-escape-sequences)
 (add-hook 'after-init-hook 'hes-mode)
 
@@ -285,8 +272,6 @@ With arg N, insert N newlines."
 (require-package 'which-key)
 (add-hook 'after-init-hook 'which-key-mode)
 (setq-default which-key-idle-delay 1.5)
-(with-eval-after-load 'which-key
-  (diminish 'which-key-mode))
 
 
 (defun sanityinc/disable-features-during-macro-call (orig &rest args)

@@ -28,8 +28,6 @@
 
 
 ;; Bootstrap config
-
-
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
@@ -38,9 +36,7 @@
 (require 'init-exec-path) ;; Set up $PATH
 
 
-
 ;; Load configs for specific features and modes
-(defalias 'diminish 'ignore)
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
@@ -156,8 +152,6 @@
 
 ;; Locales (setting them earlier in this file doesn't work in X)
 (require 'init-locales)
-
-(provide 'init)
 
 (load! "lisp/editor.el")
 
