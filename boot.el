@@ -104,7 +104,8 @@
 (require 'init-terraform)
 (require 'init-nix)
 (maybe-require-package 'nginx-mode)
-
+(require-package 'aggressive-indent)
+(add-hook 'java-mode-hook #'aggressive-indent-mode)
 (load! "lang/emacs-lisp.el")
 
 (require 'init-misc)
