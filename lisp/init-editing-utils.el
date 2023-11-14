@@ -287,5 +287,8 @@ ORIG is the advised function, which is called with its ARGS."
 ;; Prefer C-h for `delete-backward-char' to `help-map'
 (define-key key-translation-map (kbd "C-h") (kbd "DEL"))
 
+;; Use `back-to-indentation' instead of `move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line] 'back-to-indentation)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
