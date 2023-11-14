@@ -177,7 +177,7 @@
 ;;; Page break lines
 
 (when (maybe-require-package 'page-break-lines)
-  (add-hook 'after-init-hook 'global-page-break-lines-mode)
+  (add-hook 'after-init-hook 'global-page-break-lines-mode))
 
 
 
