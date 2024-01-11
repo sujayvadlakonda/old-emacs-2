@@ -105,7 +105,20 @@
 (require 'init-nix)
 (maybe-require-package 'nginx-mode)
 (require-package 'aggressive-indent)
+
 (add-hook 'java-mode-hook #'aggressive-indent-mode)
+
+(define-skeleton java-sout-skeleton
+  "sout --> System.out.println()"
+  nil
+  "System.out.println(\"" _ "\");")
+
+(add-hook 'java-mode-hook 'abbrev-mode)
+(define-abbrev java-mode-abbrev-table "sout"
+  "" 'java-sout-skeleton)
+
+(setq save-abbrevs nil)
+
 (load! "lang/emacs-lisp.el")
 (maybe-require-package 'just-mode)
 (maybe-require-package 'justl)
