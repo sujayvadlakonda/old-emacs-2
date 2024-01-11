@@ -6,5 +6,3 @@
 ;; Prevent package.el from loading
 (setq package-enable-at-startup nil)
 
-;; Load the rest of the config
-(load (concat user-emacs-directory "boot.el") nil t)

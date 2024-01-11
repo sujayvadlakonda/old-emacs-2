@@ -3,6 +3,8 @@
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 (setq debug-on-error nil)
 
+(setq native-comp-async-report-warnings-errors nil)
+
 (load (concat user-emacs-directory "lisp/sugar.el") nil t)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -114,8 +116,9 @@
   "System.out.println(\"" _ "\");")
 
 (add-hook 'java-mode-hook 'abbrev-mode)
-(define-abbrev java-mode-abbrev-table "sout"
-  "" 'java-sout-skeleton)
+(with-eval-after-load 'java-mode
+  (define-abbrev java-mode-abbrev-table "sout"
+  "" 'java-sout-skeleton))
 
 (setq save-abbrevs nil)
 

@@ -1,4 +1,6 @@
 ;; -*- lexical-binding: t; -*-
+;; Sugar for configuring emacs
+
 
 (defconst OS-MAC (eq system-type 'darwin))
 (defconst OS-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
@@ -9,3 +11,7 @@
 
 (defun global-set-kbd (key command)
   (global-set-key (kbd key) command))
+
+
+(defun define-kbd (keymap key command &optional remove)
+  (define-key keymap (kbd key) command remove))
