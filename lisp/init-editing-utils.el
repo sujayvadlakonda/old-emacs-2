@@ -330,6 +330,10 @@ ORIG is the advised function, which is called with its ARGS."
 
 (define-state 'normal :map 'multistate-motion-state-map)
 (define-kbd multistate-normal-state-map "i" 'multistate-insert-state)
+(define-kbd multistate-normal-state-map "a" (lambda ()
+                                              (interactive)
+                                              (multistate-insert-state)
+                                              (forward-char)))
 
 (require-package 'whole-line-or-region)
 (define-kbd multistate-normal-state-map "d" 'whole-line-or-region-kill-region)
