@@ -12,6 +12,5 @@
 (defun global-set-kbd (key command)
   (global-set-key (kbd key) command))
 
-
-(defun define-kbd (keymap key command &optional remove)
-  (define-key keymap (kbd key) command remove))
+(defun define-kbd (keymap key command)
+  (define-key keymap (kbd key) command))
