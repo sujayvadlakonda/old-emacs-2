@@ -3,7 +3,9 @@
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 (setq debug-on-error nil)
 
+;; No compilation warnings
 (setq native-comp-async-report-warnings-errors nil)
+(byte-compile-disable-warning)
 
 (load (concat user-emacs-directory "lisp/sugar.el") nil t)
 
