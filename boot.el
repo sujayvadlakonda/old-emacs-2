@@ -107,6 +107,8 @@
 (require-package 'aggressive-indent)
 (add-hook 'java-mode-hook #'aggressive-indent-mode)
 (load! "lang/emacs-lisp.el")
+(maybe-require-package 'just-mode)
+(maybe-require-package 'justl)
 
 (require 'init-misc)
 
@@ -115,6 +117,7 @@
 
 (require 'init-ledger)
 (require 'init-lua)
+(require 'init-uiua)
 (require 'init-terminals)
 
 ;; Extra packages which don't require any configuration
